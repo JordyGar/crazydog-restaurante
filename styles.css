@@ -1,3 +1,22 @@
+
+
+.fondo {
+  background-image: url('./fondo/fondo\ completo\ .png ');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+ max-width:100% ;
+ max-height: 100%         ;
+         /* para que la imagen quepa sin deformarse */
+    background-position: top center; /* ajusta posición en móviles */
+
+}
+
+
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -9,6 +28,7 @@ body {
 }
 
 .container {
+  background-image: url('./fondo/fondoprincipal.png');
   background-color: white;
   padding: 40px 30px;
   border-radius: 10px;
@@ -21,19 +41,20 @@ body {
 h1 {
   font-size: 24px;
   margin-bottom: 30px;
+  color:#5D2C00;
 }
 
 h1 span {
   font-weight: bold;
-  color: #000;
+  color:#5D2C00;                            
 }
 
 .locations button {
   opacity: 0;
   transform: translateY(20px);
   width: 100%;
-  background-color: #2196f3;
-  color: white;
+  background-color: #f37500;
+  color: rgb(36, 17, 4);
   border: none;
   padding: 15px;
   border-radius: 10px;
@@ -44,7 +65,7 @@ h1 span {
 }
 
 .locations button:hover {
-  background-color: #1976d2;
+  background-color: #c76f27;
 }
 
 .locations button.animate {
@@ -61,3 +82,4 @@ h1 span {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
+
