@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>CRAZY DOG - Baranoa</title>
-  <link rel="stylesheet" href="baranoa.css">
+  <link rel="stylesheet" href="atlantico.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <!--menu de la parte de arriba -->
+  <!--menu de la parte de arriba -->                                                            
   <header class="navbar">
    <div class="logo">
   <a href="">
-    <img src="./fotosbaranoa/logo .png" alt="Logo Crazy Dog PerrLoco" class="logo-img">
+    <img src="../baranoa/fotosbaranoa/logo .png" alt="Logo Crazy Dog PerrLoco" class="logo-img">
   </a>
 </div>
 
@@ -29,9 +29,9 @@
   
   <section class="hero-baranoa">
   <div class="hero-baranoa-text">
-    <h1>¡Bienvenidos al local de CRAZY DOG en Baranoa! 🌭</h1>
-    <p>Nos encontramos en el corazón de Baranoa. ¡Ven y prueba la locura del sabor!</p>
-    <p><strong>📍 Dirección:</strong> Cra 15A #calle 20a 29, Baranoa, Atlántico</p>
+    <h1>¡Bienvenidos al local de CRAZY DOG en atlantico! 🌭</h1>
+    <p>Nos encontramos en el corazón de atlantico. ¡Ven y prueba la locura del sabor!</p>
+    <p><strong>📍 Dirección:</strong> Atlántico</p>
     <div class="hero-baranoa-buttons">
       <a href="../index.html" class="btn-orange">← Volver al inicio</a>
       <a href="#menu" class="btn-white">Ver Menú</a>
@@ -49,10 +49,10 @@
 
     <div class="menu-filtros">
       <button class="activo" onclick="filtrarProductos('todos')">Todos</button>
-      <button onclick="filtrarProductos('hamburguesa')">Hamburguesas</button>
-      <button onclick="filtrarProductos('pizza')">Pizzas</button>
-      <button onclick="filtrarProductos('pollo')">Pollo</button>
-      <button onclick="filtrarProductos('hot dog')">Hot Dog</button>
+      <button onclick="filtrarProductos('hot-dog')">Hot Dog</button>
+      <button onclick="filtrarProductos('Salchipapas')">Salchipapas</button>
+      <button onclick="filtrarProductos('Arepas')">Arepas</button>
+      <button onclick="filtrarProductos('hot dog')">Arma tu perro </button>
       <button onclick="filtrarProductos('acompañamiento')">Acompañamientos</button>
       <button onclick="filtrarProductos('bebida')">Bebidas</button>
     </div>
@@ -67,52 +67,134 @@
       </div>
     
       
-<div class="producto pizza" id="producto-pizza-pepperoni">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Pizza Pepperoni" />
-  <h3>Pizza Pepperoni</h3> 
-  <p>Pizza con pepperoni y queso mozzarella</p>
-  <span class="precio">$18.99</span>
-  <button onclick="agregarAlCarrito('producto-pizza-pepperoni')">Agregar</button>
+
+<div class="producto hot-dog" id="producto-hot-dog-mini-perro">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Mini perro" />
+  <h3>Mini perro</h3> 
+  <p>detalles del mini perro</p>
+  <span class="precio">$2.000</span>
+  <button onclick="agregarAlCarrito('producto-hot-dog-mini-perro')">Agregar</button>
 </div>
 
-<div class="producto pizza" id="producto-pizza-hawaiana">
-  <img src="./fotosbaranoa/pizza hawaiana.jpeg" alt="Pizza Hawaiana" />
-  <h3>Pizza Hawaiana</h3> 
-  <p>Pizza con jamón, piña y queso mozzarella</p>
-  <span class="precio">$17.99</span>
-  <button onclick="agregarAlCarrito('producto-pizza-hawaiana')">Agregar</button>
+
+<div class="producto hot-dog" id="producto-hot-dog-sencillo">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Sencillo" />
+  <h3>Sencillo</h3> 
+  <p>detalles del Sencillo</p>
+  <span class="precio">$5.500</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-Sencillo')">Agregar</button>
 </div>
 
-<div class="producto pizza" id="producto-pizza-margarita">
-  <img src="./fotosbaranoa/pizza margarita.jpeg" alt="Pizza Margarita" />
-  <h3>Pizza Margarita</h3> 
-  <p>Pizza con tomate fresco, albahaca y mozzarella</p>
-  <span class="precio">$16.99</span>
-  <button onclick="agregarAlCarrito('producto-pizza-margarita')">Agregar</button>
+<div class="producto hot-dog" id="producto-Hot-Dog-Sencillomozarella">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Sencillomozarella" />
+  <h3>Sencillomozarella</h3> 
+  <p>detalles del Sencillomozarella</p>
+  <span class="precio">$7.500</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-Sencillomozarella')">Agregar</button>
 </div>
 
-<div class="producto pizza" id="producto-pizza-cuatro-quesos">
-  <img src="./fotosbaranoa/pizza cuatro quesos.jpeg" alt="Pizza Cuatro Quesos" />
-  <h3>Pizza Cuatro Quesos</h3> 
-  <p>Con mozzarella, parmesano, gorgonzola y cheddar</p>
-  <span class="precio">$19.49</span>
-  <button onclick="agregarAlCarrito('producto-pizza-cuatro-quesos')">Agregar</button>
+<div class="producto hot-dog" id="producto-Hot-Dog-Gemelo">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Gemelo" />
+  <h3>Gemelo</h3> 
+  <p>detalles del Gemelo</p>
+  <span class="precio">$8.000</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-Gemelo')">Agregar</button>
 </div>
 
-<div class="producto pizza" id="producto-pizza-vegetariana">
-  <img src="./fotosbaranoa/pizza vegetariana.jpeg" alt="Pizza Vegetariana" />
-  <h3>Pizza Vegetariana</h3> 
-  <p>Con pimientos, cebolla, champiñones, tomate y aceitunas</p>
-  <span class="precio">$17.49</span>
-  <button onclick="agregarAlCarrito('producto-pizza-vegetariana')">Agregar</button>
+<div class="producto hot-dog" id="producto-Hot-Dog-Gemelomozarella">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Gemelomozarella" />
+  <h3>Gemelomozarella</h3> 
+  <p>detalles del Gemelomozarella</p>
+  <span class="precio">$9.000</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-Gemelomozarella')">Agregar</button>
 </div>
 
-<div class="producto pizza" id="producto-pizza-carne">
-  <img src="./fotosbaranoa/pizza carne.jpeg" alt="Pizza de Carne" />
-  <h3>Pizza de Carne</h3> 
-  <p>Pizza con carne molida, salchicha, pepperoni y jamón</p>
-  <span class="precio">$20.99</span>
-  <button onclick="agregarAlCarrito('producto-pizza-carne')">Agregar</button>
+<div class="producto hot-dog" id="producto-Hot-Dog-Choriperro">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Choriperro" />
+  <h3>Choriperro  </h3> 
+  <p>detalles del Choriperro</p>
+  <span class="precio">$8.000</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-Choriperro')">Agregar</button>
+</div>  
+
+<div class="producto hot-dog" id="producto-Hot-Dog-Panpollo">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Panpollo" />
+  <h3>Panpollo </h3> 
+  <p>detalles del Panpollo</p>
+  <span class="precio">$8.000</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-Panpollo')">Agregar</button>
+</div>
+
+<div class="producto hot-dog" id="producto-Hot-Dog-JamonQueso">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="JamonQueso" />
+  <h3>JamonQueso </h3> 
+  <p>detalles del JamonQueso</p>
+  <span class="precio">$6.000</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-JamonQueso')">Agregar</button>
+</div>
+
+<div class="producto hot-dog" id="producto-Hot-Dog-PanQueso">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="PanQueso" />
+  <h3>PanQueso </h3> 
+  <p>detalles del PanQueso</p>
+  <span class="precio">$6.000</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-PanQueso')">Agregar</button>
+</div>
+
+<div class="producto hot-dog" id="producto-Hot-Dog-Perripollo">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="PanQueso" />
+  <h3>Perripollo </h3> 
+  <p>detalles del Perripollo</p>
+  <span class="precio">$9.000</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-Perripollo')">Agregar</button>
+</div>
+
+<div class="producto hot-dog" id="producto-Hot-Dog-Suizo">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Suizo" />
+  <h3>Suizo </h3> 
+  <p>detalles del Suizo</p>
+  <span class="precio">$15.000</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-Suizo')">Agregar</button>
+</div>
+
+<div class="producto hot-dog" id="producto-Hot-Dog-1/2Suizo">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="1/2Suizo" />
+  <h3>1/2Suizo </h3> 
+  <p>detalles del 1/2Suizo</p>
+  <span class="precio">$11.000</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-1/2Suizo')">Agregar</button>
+</div>
+
+<div class="producto hot-dog" id="producto-Hot-Dog-1/2Suizopollo">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="1/2Suizopollo" />
+  <h3>1/2Suizopollo </h3> 
+  <p>detalles del 1/2Suizopollo</p>
+  <span class="precio">$16.000</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-1/2Suizopollo')">Agregar</button>
+</div>
+
+<div class="producto hot-dog" id="producto-Hot-Dog-Suizopollo">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Suizopollo" />
+  <h3>  Suizopollo </h3> 
+  <p>detalles del Suizopollo</p>
+  <span class="precio">$20.000</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-Suizopollo')">Agregar</button>
+</div>
+
+<div class="producto hot-dog" id="producto-Hot-Dog-Perricerdo">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Perricerdo" />
+  <h3>  Perricerdo </h3> 
+  <p>detalles del Perricerdo</p>
+  <span class="precio">$11.000</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-Perricerdo')">Agregar</button>
+</div>
+
+<div class="producto hot-dog" id="producto-Hot-Dog-Perroloco">
+  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Perroloco" />
+  <h3>  Perroloco </h3> 
+  <p>detalles del Perroloco</p>
+  <span class="precio">$16.000</span>
+  <button onclick="agregarAlCarrito('producto-Hot-Dog-Perroloco')">Agregar</button>
 </div>
 
 <!-- Coca-Cola -->
@@ -244,6 +326,6 @@
   <img class="modal-contenido" id="img-ampliada">
 </div>
 
-  <script src="baranoa.js"></script>
+  <script src="atlantico.js"></script>
 </body>
 </html>
