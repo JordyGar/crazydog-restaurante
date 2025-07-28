@@ -1,4 +1,4 @@
- // Animación de aparición
+// Animación de aparición
 const buttons = document.querySelectorAll('.locations button');
 
 buttons.forEach((btn, index) => {
