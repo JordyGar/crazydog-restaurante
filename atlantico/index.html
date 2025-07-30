@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>CRAZY DOG - Baranoa</title>
+  <title>CRAZY DOG - atlantico</title>
   <link rel="stylesheet" href="atlantico.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -21,25 +21,38 @@
       <a href="#">Nosotros</a>
       <a href="#">Contacto</a>
     </nav>
-    <div class="actions">
-      <button class="register">Registrarse</button>
-      <button class="cart"><i class="fas fa-shopping-cart"></i> Pedido</button>
-    </div>
+    <!-- Botón del carrito -->
+<div class="actions">
+  <button class="cart" onclick="abrirCarrito()">
+    <i class="fas fa-shopping-cart"></i> Pedido
+  </button>
+</div>
+
+<!-- Modal del carrito -->
+<div id="modal-carrito" class="modal-carrito">
+  <div class="contenido-carrito">
+    <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+    <h2>Tu pedido</h2>
+    <ul id="lista-carrito"></ul>
+    <p id="total-carrito">Total: $0</p>
+    <button onclick="confirmarPedido()">Confirmar pedido</button>
+  </div>
+</div>  
   </header>
   
-  <section class="hero-baranoa">
-  <div class="hero-baranoa-text">
+  <section class="hero-atlantico">
+  <div class="hero-atlantico-text">
     <h1>¡Bienvenidos al local de CRAZY DOG en atlantico! 🌭</h1>
     <p>Nos encontramos en el corazón de atlantico. ¡Ven y prueba la locura del sabor!</p>
     <p><strong>📍 Dirección:</strong> Atlántico</p>
-    <div class="hero-baranoa-buttons">
+    <div class="hero-atlantico-buttons">
       <a href="../index.html" class="btn-orange">← Volver al inicio</a>
       <a href="#menu" class="btn-white">Ver Menú</a>
     </div>
   </div>
-  <div class="hero-baranoa-map">
-  <a href="https://www.google.com/maps/place/Perro+loco+crazy+dog/@10.7945589,-74.9194448,17z/data=!3m1!4b1!4m6!3m5!1s0x8ef5d78994a49eb1:0x8d72dfd1c7b20b36!8m2!3d10.7945589!4d-74.9194448!16s%2Fg%2F11rs3pzglg?entry=ttu&g_ep=EgoyMDI1MDYzMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-    <img src="./fotosbaranoa/baranoa foto.png" alt="Ubicación Google Maps Baranoa">
+  <div class="hero-atlantico-map">
+  <a href="  " target="_blank"><!-- link de goofle maps -->
+    <img src=" " alt="">  <!-- foto de la ubicacion -->
   </a>
 </div>
 </section>
@@ -47,46 +60,40 @@
     <h2>Nuestro Menú</h2>
     <p>Descubre nuestra selección de platos preparados con ingredientes frescos y mucho amor</p>
 
-    <div class="menu-filtros">
-      <button class="activo" onclick="filtrarProductos('todos')">Todos</button>
-      <button onclick="filtrarProductos('hot-dog')">Hot Dog</button>
-      <button onclick="filtrarProductos('Salchipapas')">Salchipapas</button>
-      <button onclick="filtrarProductos('Arepas')">Arepas</button>
-      <button onclick="filtrarProductos('hot dog')">Arma tu perro </button>
-      <button onclick="filtrarProductos('acompañamiento')">Acompañamientos</button>
-      <button onclick="filtrarProductos('bebida')">Bebidas</button>
-    </div>
+   <div class="menu-filtros">
+  <button class="activo" onclick="filtrarProductos('todos', event)">Todos</button>
+  <button onclick="filtrarProductos('hot-dog', event)">Hot Dog</button>
+  <button onclick="filtrarProductos('salchipapas', event)">Salchipapas</button>
+  <button onclick="filtrarProductos('arepas', event)">Arepas</button>
+  <button onclick="filtrarProductos('ingredientes', event)">Arma tu perro</button>
+  <button onclick="filtrarProductos('bebida', event)">Bebidas</button>
+</div>
+
 
     <div class="menu-grid">
-      <div class="producto hamburguesa">
-        <span class="etiqueta">Popular</span>
-        <img src="img/hamburguesa.png" alt="Hamburguesa Clásica" />
-        <h3>Hamburguesa Clásica <span>$12.99</span></h3>
-        <p>Carne jugosa, lechuga, tomate, cebolla y salsa especial</p>
-        <button>🍔 Agregar</button>
+      <div class="producto hot-dog" id="producto-hot-dog-mini-perro">
+        <img src="" alt="Mini perro" />
+        <h3>Mini perro</h3> 
+        <p>detalles del Sencillo</p>
+         <span class="precio">$2.500</span>
+         <button onclick="agregarAlCarrito('producto-hot-dog-mini-perro')">Agregar</button>                     
       </div>
     
       
-
-<div class="producto hot-dog" id="producto-hot-dog-mini-perro">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Mini perro" />
-  <h3>Mini perro</h3> 
-  <p>detalles del mini perro</p>
-  <span class="precio">$2.000</span>
-  <button onclick="agregarAlCarrito('producto-hot-dog-mini-perro')">Agregar</button>
-</div>
+<!-- hot dogs -->
 
 
-<div class="producto hot-dog" id="producto-hot-dog-sencillo">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Sencillo" />
+
+<div class="producto hot-dog" id="producto-hot-dog-Sencillo">
+  <img src="" alt="Sencillo" />
   <h3>Sencillo</h3> 
   <p>detalles del Sencillo</p>
-  <span class="precio">$5.500</span>
-  <button onclick="agregarAlCarrito('producto-Hot-Dog-Sencillo')">Agregar</button>
+  <span class="precio">$6.000</span>
+  <button onclick="agregarAlCarrito('producto-hot-dog-Sencillo')">Agregar</button>
 </div>
 
 <div class="producto hot-dog" id="producto-Hot-Dog-Sencillomozarella">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Sencillomozarella" />
+  <img src="" alt="Sencillomozarella" />
   <h3>Sencillomozarella</h3> 
   <p>detalles del Sencillomozarella</p>
   <span class="precio">$7.500</span>
@@ -94,7 +101,7 @@
 </div>
 
 <div class="producto hot-dog" id="producto-Hot-Dog-Gemelo">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Gemelo" />
+  <img src="" alt="Gemelo" />
   <h3>Gemelo</h3> 
   <p>detalles del Gemelo</p>
   <span class="precio">$8.000</span>
@@ -102,7 +109,7 @@
 </div>
 
 <div class="producto hot-dog" id="producto-Hot-Dog-Gemelomozarella">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Gemelomozarella" />
+  <img src="" alt="Gemelomozarella" />
   <h3>Gemelomozarella</h3> 
   <p>detalles del Gemelomozarella</p>
   <span class="precio">$9.000</span>
@@ -110,7 +117,7 @@
 </div>
 
 <div class="producto hot-dog" id="producto-Hot-Dog-Choriperro">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Choriperro" />
+  <img src="" alt="Choriperro" />
   <h3>Choriperro  </h3> 
   <p>detalles del Choriperro</p>
   <span class="precio">$8.000</span>
@@ -118,7 +125,7 @@
 </div>  
 
 <div class="producto hot-dog" id="producto-Hot-Dog-Panpollo">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Panpollo" />
+  <img src="" alt="Panpollo" />
   <h3>Panpollo </h3> 
   <p>detalles del Panpollo</p>
   <span class="precio">$8.000</span>
@@ -126,7 +133,7 @@
 </div>
 
 <div class="producto hot-dog" id="producto-Hot-Dog-JamonQueso">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="JamonQueso" />
+  <img src="" alt="JamonQueso" />
   <h3>JamonQueso </h3> 
   <p>detalles del JamonQueso</p>
   <span class="precio">$6.000</span>
@@ -134,7 +141,7 @@
 </div>
 
 <div class="producto hot-dog" id="producto-Hot-Dog-PanQueso">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="PanQueso" />
+  <img src="" alt="PanQueso" />
   <h3>PanQueso </h3> 
   <p>detalles del PanQueso</p>
   <span class="precio">$6.000</span>
@@ -142,7 +149,7 @@
 </div>
 
 <div class="producto hot-dog" id="producto-Hot-Dog-Perripollo">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="PanQueso" />
+  <img src="" alt="PanQueso" />
   <h3>Perripollo </h3> 
   <p>detalles del Perripollo</p>
   <span class="precio">$9.000</span>
@@ -150,7 +157,7 @@
 </div>
 
 <div class="producto hot-dog" id="producto-Hot-Dog-Suizo">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Suizo" />
+  <img src="" alt="Suizo" />
   <h3>Suizo </h3> 
   <p>detalles del Suizo</p>
   <span class="precio">$15.000</span>
@@ -158,7 +165,7 @@
 </div>
 
 <div class="producto hot-dog" id="producto-Hot-Dog-1/2Suizo">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="1/2Suizo" />
+  <img src="" alt="1/2Suizo" />
   <h3>1/2Suizo </h3> 
   <p>detalles del 1/2Suizo</p>
   <span class="precio">$11.000</span>
@@ -166,7 +173,7 @@
 </div>
 
 <div class="producto hot-dog" id="producto-Hot-Dog-1/2Suizopollo">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="1/2Suizopollo" />
+  <img src="" alt="1/2Suizopollo" />
   <h3>1/2Suizopollo </h3> 
   <p>detalles del 1/2Suizopollo</p>
   <span class="precio">$16.000</span>
@@ -174,7 +181,7 @@
 </div>
 
 <div class="producto hot-dog" id="producto-Hot-Dog-Suizopollo">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Suizopollo" />
+  <img src="" alt="Suizopollo" />
   <h3>  Suizopollo </h3> 
   <p>detalles del Suizopollo</p>
   <span class="precio">$20.000</span>
@@ -182,7 +189,7 @@
 </div>
 
 <div class="producto hot-dog" id="producto-Hot-Dog-Perricerdo">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Perricerdo" />
+  <img src="" alt="Perricerdo" />
   <h3>  Perricerdo </h3> 
   <p>detalles del Perricerdo</p>
   <span class="precio">$11.000</span>
@@ -190,131 +197,210 @@
 </div>
 
 <div class="producto hot-dog" id="producto-Hot-Dog-Perroloco">
-  <img src="./fotosbaranoa/pizza de peperoni.jpeg" alt="Perroloco" />
+  <img src="" alt="Perroloco" />
   <h3>  Perroloco </h3> 
   <p>detalles del Perroloco</p>
   <span class="precio">$16.000</span>
   <button onclick="agregarAlCarrito('producto-Hot-Dog-Perroloco')">Agregar</button>
 </div>
 
-<!-- Coca-Cola -->
-<div class="producto bebida" id="producto-coca-cola-personal">
-  <img src="./fotosbaranoa/coca-cola-personal.jpg " alt="Coca-Cola Personal" onclick="ampliarImagen(this)"  />
-  <h3>Coca-Cola Personal</h3>
-  <p>Botella de 400ml</p>
-  <span class="precio">$2.50</span>
-  <button onclick="agregarAlCarrito('producto-coca-cola-personal')">Agregar</button>
-</div>
 
-<div class="producto bebida" id="producto-coca-cola-litro">
-  <img src="./fotosbaranoa/coca-cola-litro.jpg" alt="Coca-Cola 1L" onclick="ampliarImagen(this)"  />
-  <h3>Coca-Cola 1 Litro</h3>
-  <p>Botella de 1L</p>
-  <span class="precio">$4.50</span>
-  <button onclick="agregarAlCarrito('producto-coca-cola-litro')">Agregar</button>
-</div>
-
-<div class="producto bebida" id="producto-coca-cola-1-5litros">
-  <img src="./fotosbaranoa/coca-cola-1.5litros.jpg" alt="Coca-Cola 1.5L" onclick="ampliarImagen(this)"  />
-  <h3>Coca-Cola 1.5 Litros</h3>
-  <p>Botella de 1.5L</p>
-  <span class="precio">$5.50</span>
-  <button onclick="agregarAlCarrito('producto-coca-cola-1-5litros')">Agregar</button>
-</div>
-
-<div class="producto bebida" id="producto-coca-cola-2litros">
-  <img src="./fotosbaranoa/coca-cola-2litros.jpg" alt="Coca-Cola 2L" onclick="ampliarImagen(this)"  />
-  <h3>Coca-Cola 2 Litros</h3>
-  <p>Botella de 2L</p>
-  <span class="precio">$6.50</span>
-  <button onclick="agregarAlCarrito('producto-coca-cola-2litros')">Agregar</button>
-</div>
-<!-- Postobón Manzana Personal -->
-<div class="producto bebida" id="producto-postobon-manzana-personal">
-  <img src="./fotosbaranoa/postobon-manzana-personal.png" alt="Postobón Manzana Personal" onclick="ampliarImagen(this)" />
-  <h3>Postobón Manzana Personal</h3>
-  <p>Botella de 400ml</p>
-  <span class="precio">$2.50</span>
-  <button onclick="agregarAlCarrito('producto-postobon-manzana-personal')">Agregar</button>
+<div class="producto salchipapas" id="producto-salchipapa-sencilla">
+  <img src="" alt="salchipapa-sencilla" onclick="ampliarImagen(this)"  />
+  <h3>Salchipapa Sencilla</h3>
+  <p>detalles </p>
+  <span class="precio">$8.000</span>
+  <button onclick="agregarAlCarrito('producto-salchipapa-sencilla')">Agregar</button>
 </div>
 
 
-<!-- Postobón Manzana 1 Litro -->
-<div class="producto bebida" id="producto-postobon-manzana-litro">
-  <img src="./fotosbaranoa/postobon-manzana-litro.jpg" alt="Postobón Manzana 1L" onclick="ampliarImagen(this)" />
-  <h3>Postobón Manzana 1 Litro</h3>
-  <p>Botella de 1L</p>
-  <span class="precio">$4.50</span>
-  <button onclick="agregarAlCarrito('producto-postobon-manzana-litro')">Agregar</button>
-</div>
-
-<!-- Postobón Manzana 1.5 Litros -->
-<div class="producto bebida" id="producto-postobon-manzana-1-5litros">
-  <img src="./fotosbaranoa/postobon-manzana-1.5litros.jpeg" alt="Postobón Manzana 1.5L" onclick="ampliarImagen(this)"/>
-  <h3>Postobón Manzana 1.5 Litros</h3>
-  <p>Botella de 1.5L</p>
-  <span class="precio">$5.50</span>
-  <button onclick="agregarAlCarrito('producto-postobon-manzana-1-5litros')">Agregar</button>
-</div>
-
-<!-- Postobón Manzana 2 Litros -->
-<div class="producto bebida" id="producto-postobon-manzana-2.5litros">
-  <img src="./fotosbaranoa/postobon-manzana-2.5litros.jpeg" alt="Postobón Manzana 2L" onclick="ampliarImagen(this)" />
-  <h3>Postobón Manzana 2.5 Litros</h3>
-  <p>Botella de 2L</p>
-  <span class="precio">$6.50</span>
-  <button onclick="agregarAlCarrito('producto-postobon-manzana-2litros')">Agregar</button>
-</div>
-<!-- Colombiana Personal -->
-<div class="producto bebida" id="producto-colombiana-personal">
-  <img src="./fotosbaranoa/colombiana-personal.jpg" alt="Colombiana Personal"onclick="ampliarImagen(this)"  />
-  <h3>Colombiana Personal</h3>
-  <p>Botella de 400ml</p>
-  <span class="precio">$2.50</span>
-  <button onclick="agregarAlCarrito('producto-colombiana-personal')">Agregar</button>
-</div>
-
-<!-- Colombiana 1 Litro -->
-<div class="producto bebida" id="producto-colombiana-litro">
-  <img src="./fotosbaranoa/colombiana-litro.jpg" alt="Colombiana 1L" onclick="ampliarImagen(this)"/>
-  <h3>Colombiana 1 Litro</h3>
-  <p>Botella de 1L</p>
-  <span class="precio">$4.50</span>
-  <button onclick="agregarAlCarrito('producto-colombiana-litro')">Agregar</button>
-</div>
-
-<!-- Colombiana 1.5 Litros -->
-<div class="producto bebida" id="producto-colombiana-1-5litros">
-  <img src="./fotosbaranoa/colombiana-1.5litros.jpg" alt="Colombiana 1.5L" onclick="ampliarImagen(this)" />
-  <h3>Colombiana 1.5 Litros</h3>
-  <p>Botella de 1.5L</p>
-  <span class="precio">$5.50</span>
-  <button onclick="agregarAlCarrito('producto-colombiana-1-5litros')">Agregar</button>
-</div>
-
-<!-- Colombiana 2 Litros -->
-<div class="producto bebida" id="producto-colombiana-2litros">
-  <img src="./fotosbaranoa/colombiana-2litros.jpg" alt="Colombiana 2L" onclick="ampliarImagen(this)"/>
-  <h3>Colombiana 2 Litros</h3>
-  <p>Botella de 2L</p>
-  <span class="precio">$6.50</span>
-  <button onclick="agregarAlCarrito('producto-colombiana-2litros')">Agregar</button>
+<div class="producto salchipapas" id="producto-salchipapa-Gratinada">
+  <img src="" alt="salchipapa-Gratinada" onclick="ampliarImagen(this)"  />
+  <h3>Salchipapa Gratinada</h3>
+  <p>detalles </p>
+  <span class="precio">$12.000</span>
+  <button onclick="agregarAlCarrito('producto-salchipapa-Gratinada')">Agregar</button>
 </div>
 
 
-      <div class="producto pollo">
-        <img src="img/pollo.png" alt="Pollo Frito" />
-        <h3>Pollo Frito <span>$14.99</span></h3>
-        <p>Piezas crujientes de pollo con especias</p>
-        <button>🍗 Agregar</button>
-      </div>
+<div class="producto salchipapas" id="producto-salchipapa-ay-Caramba">
+  <img src="" alt="salchipapa-ay-Caramba" onclick="ampliarImagen(this)"  />
+  <h3>ay Caramba</h3>
+  <p>detalles </p>
+  <span class="precio">$20.000</span>
+  <button onclick="agregarAlCarrito('producto-salchipapa-ay-Caramba')">Agregar</button>
+</div>
 
-      <div class="producto bebida">
-        <img src="img/bebida.png" alt="Refresco" />
-        <h3>Refresco <span>$2.50</span></h3>
-        <p>Refresco frío en varios sabores</p>
-        <button>🥤 Agregar</button>
-      </div>
+<!-- Arepas -->
+
+<div class="producto arepas" id="producto-Arepa-de-Queso">
+  <img src="" alt="Arepa-de-Queso" onclick="ampliarImagen(this)"  />
+  <h3>Arepa de Queso</h3>
+  <p>detalles </p>
+  <span class="precio">$3.000</span>
+  <button onclick="agregarAlCarrito('producto-Arepa-de-Queso')">Agregar</button>
+</div>
+
+<div class="producto arepas" id="producto-Arepachori">
+  <img src="" alt="Arepachori" onclick="ampliarImagen(this)"  />
+  <h3>Arepachori</h3>
+  <p>detalles </p>
+  <span class="precio">$6.000</span>
+  <button onclick="agregarAlCarrito('producto-Arepachori')">Agregar</button>
+</div>
+
+<div class="producto arepas" id="producto-Arepa-suiza">
+  <img src="" alt="Arepa-suiza" onclick="ampliarImagen(this)"  />
+  <h3>Arepa Suiza</h3>
+  <p>detalles </p>
+  <span class="precio">$8.000</span>
+  <button onclick="agregarAlCarrito('producto-Arepa-suiza')">Agregar</button>
+</div>
+
+<div class="producto arepas" id="producto-Arepa-Pollo">
+  <img src="" alt="Arepa-Pollo" onclick="ampliarImagen(this)"  />
+  <h3>Arepa Pollo</h3>
+  <p>detalles </p>
+  <span class="precio">$8.000</span>
+  <button onclick="agregarAlCarrito('producto-Arepa-Pollo')">Agregar</button>
+</div>
+
+<div class="producto arepas" id="producto-Arepa-con-Carne">
+  <img src="" alt="Arepa-con-Carne" onclick="ampliarImagen(this)"  />
+  <h3>Arepas con Carne</h3>
+  <p>detalles </p>
+  <span class="precio">$8.000</span>
+  <button onclick="agregarAlCarrito('producto-Arepa-con-Carne')">Agregar</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Agrega los demás ingredientes igual -->
+
+<div class="producto ingredientes" id="ingrediente-salchicha">
+  <h3>Salchicha</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$1.500</span>
+  <button onclick="agregarAlCarrito('ingrediente-salchicha')">Agregar</button>
+</div>
+
+<div class="producto ingredientes" id="ingrediente-jamon">
+  <h3>Jamón</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$1.000</span>
+  <button onclick="agregarAlCarrito('ingrediente-jamon')">Agregar</button>
+</div>
+
+<div class="producto ingredientes" id="ingrediente-pollo">
+  <h3>Pollo</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$4.000</span>
+  <button onclick="agregarAlCarrito('ingrediente-pollo')">Agregar</button>
+</div>
+
+<div class="producto ingredientes" id="ingrediente-chorizo">
+  <h3>Chorizo</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$1.500</span>
+  <button onclick="agregarAlCarrito('ingrediente-chorizo')">Agregar</button>
+</div>
+
+<div class="producto ingredientes" id="ingrediente-media-suiza">
+  <h3>1/2 Suiza</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$5.000</span>
+  <button onclick="agregarAlCarrito('ingrediente-media-suiza')">Agregar</button>
+</div>
+
+<div class="producto ingredientes" id="ingrediente-suiza">
+  <h3>Suiza</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$7.000</span>
+  <button onclick="agregarAlCarrito('ingrediente-suiza')">Agregar</button>
+</div>
+
+<div class="producto ingredientes" id="ingrediente-panperro">
+  <h3>Panperro</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$1.500</span>
+  <button onclick="agregarAlCarrito('ingrediente-panperro')">Agregar</button>
+</div>
+
+<div class="producto ingredientes" id="ingrediente-salsas">
+  <h3>Salsas</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$2.000</span>
+  <button onclick="agregarAlCarrito('ingrediente-salsas')">Agregar</button>
+</div>
+
+<div class="producto ingredientes" id="ingrediente-chongo">
+  <h3>Chongo</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$1.000</span>
+  <button onclick="agregarAlCarrito('ingrediente-chongo')">Agregar</button>
+</div>
+
+<div class="producto ingredientes" id="ingrediente-queso-costeño">
+  <h3>Queso Costeño</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$1.500</span>
+  <button onclick="agregarAlCarrito('ingrediente-queso-costeño')">Agregar</button>
+</div>
+
+<div class="producto ingredientes" id="ingrediente-francesa">
+  <h3>Francesa</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$4.000</span>
+  <button onclick="agregarAlCarrito('ingrediente-francesa')">Agregar</button>
+</div>
+
+<div class="producto ingredientes" id="ingrediente-mozarella">
+  <h3>Mozarella</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$1.500</span>
+  <button onclick="agregarAlCarrito('ingrediente-mozarella')">Agregar</button>
+</div>
+
+<div class="producto ingredientes" id="ingrediente-cerdo">
+  <h3>Cerdo</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$5.000</span>
+  <button onclick="agregarAlCarrito('ingrediente-cerdo')">Agregar</button>
+</div>
+
+<div class="producto ingredientes" id="ingrediente-gratinado">
+  <h3>Gratinado</h3>
+  <p>Ingrediente para tu perro loco</p>
+  <span class="precio">$3.000</span>
+  <button onclick="agregarAlCarrito('ingrediente-gratinado')">Agregar</button>
+</div>
+
+
+<!-- agrega los demás ingredientes de la misma forma -->
+
+
+
+
+
+
+
+
+
+ 
+
 
       <!-- Agrega más productos si deseas -->
     </div>
@@ -325,6 +411,12 @@
   <span class="cerrar" onclick="cerrarModal()">&times;</span>
   <img class="modal-contenido" id="img-ampliada">
 </div>
+
+
+
+
+
+
 
   <script src="atlantico.js"></script>
 </body>
