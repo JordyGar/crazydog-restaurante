@@ -120,7 +120,7 @@ function confirmarPedido() {
     mensaje += `\n📍 *Lugar:* Domicilio\n📞 *Teléfono:* ${telefono}\n🙋 *Nombre:* ${nombre}\n📌 *Dirección:* Carrera ${carrera}, Bloque ${bloque}`;
   }
 
-  const telefonoDestino = "573126885055";
+  const telefonoDestino = "573013528070";
   const url = `https://wa.me/${telefonoDestino}?text=${encodeURIComponent(mensaje)}`;
 
   // Limpiar todo
@@ -149,3 +149,4 @@ function ampliarImagen(img) {
 window.addEventListener('DOMContentLoaded', () => {
   filtrarProductos('todos', null);
 });
+
