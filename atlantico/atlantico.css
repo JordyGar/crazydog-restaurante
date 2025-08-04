@@ -85,9 +85,9 @@ section {
 
 .actions button { 
   margin-left: 10px;
-  padding: 6px 12px;
+  padding: 50px 50px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -418,4 +418,39 @@ section {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
+}
+
+/* Animación del botón*/
+
+.producto button.agregado {
+  background-color: #16a34a; /* verde */
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.producto button.agregado::after {
+  content: " ✔ Agregado";
+}
+
+/* Animación del botón del formulario*/
+.tipo-pedido button {
+  margin: 5px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tipo-pedido button:focus {
+  background-color: #dc2626;
+  color: white;
+}
+
+.formulario-condicional input {
+  margin: 6px 0;
+  padding: 8px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }

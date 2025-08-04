@@ -21,23 +21,61 @@
       <a href="#">Nosotros</a>
       <a href="#">Contacto</a>
     </nav>
-    <!-- Botón del carrito -->
+<!-- Botón del carrito -->
 <div class="actions">
   <button class="cart" onclick="abrirCarrito()">
-    <i class="fas fa-shopping-cart"></i> Pedido
+    <i class="fas fa-shopping-cart"></i> Mi carrito
   </button>
 </div>
 
 <!-- Modal del carrito -->
 <div id="modal-carrito" class="modal-carrito">
   <div class="contenido-carrito">
-    <span class="cerrar" onclick="cerrarCarrito()">&times;</span>
+    <span class="cerrar" onclick="cerrarCarrito()">×</span>
     <h2>Tu pedido</h2>
+
     <ul id="lista-carrito"></ul>
     <p id="total-carrito">Total: $0</p>
-    <button onclick="confirmarPedido()">Confirmar pedido</button>
+
+    <!-- Botones para elegir el tipo de pedido -->
+    <div class="tipo-pedido">
+      <button onclick="seleccionarTipoPedido('puesto')">Puesto Perroloco</button>
+      <button onclick="seleccionarTipoPedido('domicilio')">Domicilio</button>
+    </div>
+
+    <!-- Contenedor que muestra el formulario según el tipo de pedido -->
+    <div id="formulario-pedido" class="formulario-condicional">
+      <!-- Formulario Puesto -->
+      <div id="formulario-puesto" style="display: none;">
+        <label for="nombrePuesto">Nombre:</label>
+        <input type="text" id="nombrePuesto" placeholder="Tu nombre">
+      </div>
+
+      <!-- Formulario Domicilio -->
+      <div id="formulario-domicilio" style="display: none;">
+        <label for="telefono">Número telefónico:</label>
+        <input type="text" id="telefono" placeholder="Numero Ej: 3001234567">
+
+        <label for="nombreDomicilio">Nombre:</label>
+        <input type="text" id="nombreDomicilio" placeholder="Tu nombre">
+
+        <label for="carrera">Carrera:</label>
+        <input type="text" id="carrera" placeholder="Ej: carrera">
+
+        <label for="bloque">Bloque:</label>
+        <input type="text" id="bloque" placeholder="Ej: Bloque 3A">
+      </div>
+    </div>
+
+    <!-- Confirmación -->
+    <div class="modal-footer">
+      <button class="cerrar" onclick="cerrarCarrito()">Cerrar</button>
+      <button onclick="confirmarPedido()">Confirmar pedido</button>
+    </div>
   </div>
-</div>  
+</div>
+
+
   </header>
   
   <section class="hero-atlantico">
@@ -75,7 +113,7 @@
         <img src="" alt="Mini perro" />
         <h3>Mini perro</h3> 
         <p>detalles del Sencillo</p>
-         <span class="precio">$2.500</span>
+         <span class="precio">$3.000</span>
          <button onclick="agregarAlCarrito('producto-hot-dog-mini-perro')">Agregar</button>                     
       </div>
     
